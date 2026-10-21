@@ -1,0 +1,117 @@
+.tabs {
+  display: flex;
+  background: var(--warm-100);
+  border-radius: var(--r-lg);
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--warm-500);
+  background: none;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.tabActive {
+  background: var(--white);
+  color: var(--rose-600);
+  box-shadow: var(--shadow-sm);
+}
+
+.formIntro {
+  margin-bottom: 20px;
+}
+
+.formIntro h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--warm-900);
+  margin-bottom: 4px;
+}
+
+.formIntro p {
+  font-size: 13px;
+  color: var(--warm-500);
+}
+
+.welcomeBonus {
+  background: linear-gradient(135deg, var(--rose-50), var(--cream));
+  border: 1px solid var(--rose-200);
+  border-radius: var(--r-md);
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rose-700);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formGroup label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--warm-700);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.formGroup input {
+  padding: 12px 14px;
+  border: 1.5px solid var(--warm-200);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--warm-900);
+  background: var(--white);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  font-family: inherit;
+  width: 100%;
+}
+
+.formGroup input:focus {
+  border-color: var(--rose-400);
+  box-shadow: 0 0 0 3px rgba(183,110,121,0.1);
+}
+
+.error {
+  font-size: 11px;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.hint {
+  text-align: center;
+  font-size: 13px;
+  color: var(--warm-500);
+  margin-top: 4px;
+}
+
+.hintLink {
+  background: none;
+  border: none;
+  color: var(--rose-500);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: inherit;
+}

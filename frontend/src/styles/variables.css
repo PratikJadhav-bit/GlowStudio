@@ -1,0 +1,90 @@
+/* ═══════════════════════════════════════════════
+   GLOWSTUDIO – CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   Rose Gold × White Marble × AI-Powered Beauty
+═══════════════════════════════════════════════ */
+
+:root {
+  /* ── Rose Gold Palette ── */
+  --rose-50:  #fdf5f6;
+  --rose-100: #fae8eb;
+  --rose-200: #f5d0d7;
+  --rose-300: #ecaab7;
+  --rose-400: #e07d92;
+  --rose-500: #B76E79;
+  --rose-600: #a05666;
+  --rose-700: #894658;
+  --rose-800: #73394b;
+  --rose-900: #5e2e3d;
+
+  --rose-gold:  #B76E79;
+  --rose-light: #D4A0A7;
+  --rose-dark:  #8B4F5A;
+
+  /* ── Gold Accent ── */
+  --gold:       #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-dark:  #9a7635;
+
+  /* ── Neutral Warm Scale ── */
+  --white:           #FFFFFF;
+  --off-white:       #FAF8F6;
+  --cream:           #F7F3EF;
+  --warm-100:        #F5F1EE;
+  --warm-200:        #EDE8E4;
+  --warm-300:        #DDD6CF;
+  --warm-400:        #C4BAB2;
+  --warm-500:        #A89E96;
+  --warm-600:        #8C8078;
+  --warm-700:        #6E6460;
+  --warm-800:        #4A4440;
+  --warm-900:        #2D2825;
+
+  /* ── Dark Backgrounds ── */
+  --deep-rose:  #2D1218;
+  --deep-plum:  #1A0A0E;
+  --dark-card:  rgba(45, 18, 24, 0.9);
+
+  /* ── Semantic Colors ── */
+  --success:  #5BA88A;
+  --warning:  #D4A44C;
+  --danger:   #C4566A;
+  --info:     #5B8BC4;
+
+  /* ── Typography ── */
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ── Spacing & Layout ── */
+  --section-py:    clamp(64px, 8vw, 110px);
+  --container-max: 1280px;
+  --nav-height:    72px;
+
+  /* ── Border Radius ── */
+  --r-sm:  6px;
+  --r-md:  12px;
+  --r-lg:  20px;
+  --r-xl:  32px;
+  --r-2xl: 48px;
+  --r-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-xs: 0 1px 4px rgba(183,110,121,0.06);
+  --shadow-sm: 0 2px 10px rgba(183,110,121,0.10);
+  --shadow-md: 0 8px 32px rgba(183,110,121,0.14);
+  --shadow-lg: 0 20px 60px rgba(183,110,121,0.18);
+  --shadow-xl: 0 40px 100px rgba(183,110,121,0.22);
+  --shadow-glow: 0 0 40px rgba(183,110,121,0.25);
+
+  /* ── Transitions ── */
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:    cubic-bezier(0, 0, 0.2, 1);
+  --duration-fast:   150ms;
+  --duration-base:   300ms;
+  --duration-slow:   500ms;
+  --duration-slower: 800ms;
+
+  --transition: var(--duration-base) var(--ease);
+  --transition-spring: var(--duration-slow) var(--ease-spring);
+}

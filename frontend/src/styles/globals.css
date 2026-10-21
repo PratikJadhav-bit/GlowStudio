@@ -1,0 +1,245 @@
+/* ═══════════════════════════════════════
+   GLOWSTUDIO – GLOBAL STYLES
+═══════════════════════════════════════ */
+@import './variables.css';
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--off-white);
+  color: var(--warm-800);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+img, video { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: inherit; }
+a { text-decoration: none; color: inherit; }
+ul, ol { list-style: none; }
+input, textarea, select { font-family: inherit; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--rose-300); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--rose-500); }
+
+/* ── Selection ── */
+::selection {
+  background: var(--rose-200);
+  color: var(--rose-900);
+}
+
+/* ── Focus visible ── */
+:focus-visible {
+  outline: 2px solid var(--rose-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Layout ── */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px);
+  width: 100%;
+}
+
+/* ── Section Common ── */
+.section {
+  padding: var(--section-py) 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: var(--r-full);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--rose-100), var(--rose-50));
+  border: 1px solid var(--rose-200);
+  color: var(--rose-600);
+  margin-bottom: 18px;
+}
+
+.section-badge--light {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.9);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--warm-900);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--rose-gold);
+}
+
+.section-title--light { color: var(--white); }
+.section-title--light em { color: var(--rose-200); }
+
+.section-subtitle {
+  font-size: clamp(15px, 2vw, 17px);
+  color: var(--warm-500);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+.section-subtitle--light { color: rgba(255,255,255,0.68); }
+
+/* ── Utility ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-rose { color: var(--rose-gold); }
+.text-gold { color: var(--gold); }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes floatYSlow {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes orbMove {
+  0%, 100% { transform: scale(1) translate(0,0); opacity: 0.5; }
+  33%       { transform: scale(1.08) translate(16px,-16px); opacity: 0.65; }
+  66%       { transform: scale(0.95) translate(-10px,10px); opacity: 0.4; }
+}
+@keyframes spinLoader {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+@keyframes slideInRight {
+  from { transform: translateX(110%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(110%); opacity: 0; }
+}
+@keyframes scaleIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes barGrow {
+  from { width: 0%; }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes particleFly {
+  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.3; }
+  100% { transform: translateY(-100vh) translateX(var(--tx, 20px)) scale(0.5); opacity: 0; }
+}
+
+/* ── Skeleton loader ── */
+.skeleton {
+  background: linear-gradient(90deg, var(--warm-200) 25%, var(--warm-100) 50%, var(--warm-200) 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--r-md);
+}
+
+/* ── Card base ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--warm-200);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--rose-200);
+}
+
+/* ── Grid helpers ── */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* ── Page transitions ── */
+.page-enter {
+  animation: fadeIn var(--duration-slow) var(--ease) both;
+}

@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GlowStudio – The premier AI-powered luxury salon & beauty studio. Book appointments, discover AI hairstyle recommendations, and experience personalized beauty like never before." />
+  <meta name="keywords" content="luxury salon, beauty studio, AI hairstyle, hair salon booking, beauty tech, GlowStudio" />
+  <title>GlowStudio – AI-Powered Luxury Beauty Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">GlowStudio</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services" id="nav-services">Services</a></li>
+        <li><a href="#stylists" id="nav-stylists">Stylists</a></li>
+        <li><a href="#gallery" id="nav-gallery">Gallery</a></li>
+        <li><a href="#products" id="nav-products">Products</a></li>
+        <li><a href="#loyalty" id="nav-loyalty">VIP</a></li>
+        <li><a href="#dashboard" id="nav-dashboard">Dashboard</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-ghost" id="nav-login-btn" onclick="openModal('login-modal')">Sign In</button>
+        <button class="btn-rose" id="nav-book-btn" onclick="openModal('booking-modal')">Book Now</button>
+        <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ HERO SECTION ═══════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <div class="particles" id="particles"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-up">
+        <span class="badge-dot"></span>
+        <span>AI-Powered Beauty Intelligence</span>
+      </div>
+      <h1 class="hero-title animate-fade-up delay-1">
+        Where <em>Beauty</em><br />Meets <span class="rose-text">Intelligence</span>
+      </h1>
+      <p class="hero-subtitle animate-fade-up delay-2">
+        Experience the future of luxury beauty. Personalized AI recommendations,
+        seamless booking, and transformative services crafted for you.
+      </p>
+      <div class="hero-actions animate-fade-up delay-3">
+        <button class="btn-primary-lg" id="hero-book-btn" onclick="openModal('booking-modal')">
+          <span>Book Your Experience</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="btn-outline-lg" id="hero-ai-btn" onclick="openModal('ai-modal')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          <span>Try AI Stylist</span>
+        </button>
+      </div>
+      <div class="hero-stats animate-fade-up delay-4">
+        <div class="stat-item">
+          <span class="stat-number" data-target="12500">0</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Satisfaction Rate</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="24">0</span>
+          <span class="stat-label">Expert Stylists</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="8">0</span>
+          <span class="stat-label">Years Excellence</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual animate-fade-left delay-2">
+      <div class="hero-card floating">
+        <img src="../../../.gemini/antigravity/brain/73e39597-d0c1-404c-b2d5-52fd101179c7/salon_hero_1779819698157.png" alt="Luxury Salon Interior" class="hero-img" />
+        <div class="hero-card-overlay">
+          <div class="ai-chip">
+            <span class="ai-icon">✦</span>
+            <span>AI Styling Active</span>
+          </div>
+        </div>
+      </div>
+      <div class="float-card card-booking floating-slow">
+        <div class="float-icon">📅</div>
+        <div>
+          <div class="float-title">Next Appointment</div>
+          <div class="float-sub">Today, 3:00 PM · Sophia</div>
+        </div>
+      </div>
+      <div class="float-card card-loyalty floating-medium">
+        <div class="float-icon">💎</div>
+        <div>
+          <div class="float-title">VIP Member</div>
+          <div class="float-sub">2,840 Glow Points</div>
+        </div>
+      </div>
+      <div class="float-card card-queue floating-slow2">
+        <div class="float-icon">⏱️</div>
+        <div>
+          <div class="float-title">Queue Status</div>
+          <div class="float-sub">~12 min wait</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ AI RECOMMENDATION STRIP ═══════════════════ -->
+  <section class="ai-strip">
+    <div class="ai-strip-inner">
+      <div class="ai-strip-content">
+        <div class="ai-strip-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <div>
+          <h3 class="ai-strip-title">GlowAI™ Beauty Intelligence</h3>
+          <p class="ai-strip-text">Our AI analyzes your face shape, skin tone, and style preferences to curate personalized beauty recommendations just for you.</p>
+        </div>
+        <button class="btn-rose-sm" id="ai-strip-btn" onclick="openModal('ai-modal')">Try Now →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SERVICES ═══════════════════ -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Our Services</div>
+        <h2 class="section-title">Luxury Beauty <em>Experiences</em></h2>
+        <p class="section-subtitle">Every service is a masterpiece, crafted with precision and care by our expert beauty artists.</p>
+      </div>
+      <div class="services-grid" id="services-grid">
+        <!-- JS populated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ STYLISTS ═══════════════════ -->
+  <section class="stylists-section" id="stylists">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Our Team</div>
+        <h2 class="section-title">Meet Your <em>Beauty Artists</em></h2>
+        <p class="section-subtitle">World-class stylists with a passion for transformative beauty and personalized artistry.</p>
+      </div>
+      <div class="stylists-grid" id="stylists-grid">
+        <!-- JS populated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ GALLERY ═══════════════════ -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Transformations</div>
+        <h2 class="section-title">Before & After <em>Gallery</em></h2>
+        <p class="section-subtitle">Witness the magic of our expert stylists through real client transformations.</p>
+      </div>
+      <div class="gallery-tabs" id="gallery-tabs">
+        <button class="gallery-tab active" id="tab-all" onclick="filterGallery('all')">All</button>
+        <button class="gallery-tab" id="tab-hair" onclick="filterGallery('hair')">Hair</button>
+        <button class="gallery-tab" id="tab-color" onclick="filterGallery('color')">Color</button>
+        <button class="gallery-tab" id="tab-makeup" onclick="filterGallery('makeup')">Makeup</button>
+        <button class="gallery-tab" id="tab-nail" onclick="filterGallery('nail')">Nail Art</button>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- JS populated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ LOYALTY / VIP ═══════════════════ -->
+  <section class="loyalty-section" id="loyalty">
+    <div class="loyalty-bg">
+      <div class="loyalty-orb l-orb-1"></div>
+      <div class="loyalty-orb l-orb-2"></div>
+    </div>
+    <div class="container">
+      <div class="loyalty-inner">
+        <div class="loyalty-content">
+          <div class="section-badge light">VIP Membership</div>
+          <h2 class="section-title light">The <em>GlowElite</em><br />Experience</h2>
+          <p class="section-subtitle light">Join our exclusive VIP membership and unlock a world of luxury benefits, priority booking, and personalized rewards.</p>
+          <div class="loyalty-tiers" id="loyalty-tiers">
+            <!-- JS populated -->
+          </div>
+        </div>
+        <div class="loyalty-visual">
+          <div class="loyalty-card">
+            <div class="lc-header">
+              <div class="lc-logo">✦ GlowStudio</div>
+              <div class="lc-tier">DIAMOND</div>
+            </div>
+            <div class="lc-member">
+              <div class="lc-avatar">SA</div>
+              <div>
+                <div class="lc-name">Sarah Anderson</div>
+                <div class="lc-since">Member since 2022</div>
+              </div>
+            </div>
+            <div class="lc-points-bar">
+              <div class="lc-points-label">
+                <span>Glow Points</span>
+                <span class="lc-points-val">8,420 / 10,000</span>
+              </div>
+              <div class="lc-bar-track">
+                <div class="lc-bar-fill" style="width: 84.2%"></div>
+              </div>
+            </div>
+            <div class="lc-perks">
+              <div class="lc-perk">✦ 20% off all services</div>
+              <div class="lc-perk">✦ Priority booking</div>
+              <div class="lc-perk">✦ Free monthly treatment</div>
+              <div class="lc-perk">✦ Exclusive product access</div>
+            </div>
+            <div class="lc-card-num">•••• •••• •••• 4821</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SMART QUEUE ═══════════════════ -->
+  <section class="queue-section" id="queue">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Smart Queue</div>
+        <h2 class="section-title">Real-Time <em>Queue Management</em></h2>
+        <p class="section-subtitle">Never wait in uncertainty. Our AI-powered queue system gives you live updates and smart scheduling.</p>
+      </div>
+      <div class="queue-dashboard" id="queue-dashboard">
+        <div class="queue-overview">
+          <div class="queue-stat-card" id="qs-wait">
+            <div class="qs-icon">⏱️</div>
+            <div class="qs-val" id="wait-time-val">12</div>
+            <div class="qs-label">Min Avg Wait</div>
+            <div class="qs-trend up">↑ 3 min from usual</div>
+          </div>
+          <div class="queue-stat-card" id="qs-active">
+            <div class="qs-icon">💇</div>
+            <div class="qs-val" id="active-clients-val">7</div>
+            <div class="qs-label">Active Clients</div>
+            <div class="qs-trend neutral">→ Steady</div>
+          </div>
+          <div class="queue-stat-card" id="qs-queue">
+            <div class="qs-icon">👥</div>
+            <div class="qs-val" id="queue-count-val">4</div>
+            <div class="qs-label">In Queue</div>
+            <div class="qs-trend down">↓ 2 from yesterday</div>
+          </div>
+          <div class="queue-stat-card" id="qs-available">
+            <div class="qs-icon">✅</div>
+            <div class="qs-val" id="available-val">3</div>
+            <div class="qs-label">Available Stylists</div>
+            <div class="qs-trend up">↑ 1 just opened</div>
+          </div>
+        </div>
+        <div class="queue-list-wrap">
+          <div class="queue-list-header">
+            <h3>Live Queue</h3>
+            <div class="live-badge"><span class="live-dot"></span> LIVE</div>
+          </div>
+          <div class="queue-list" id="queue-list">
+            <!-- JS populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PRODUCTS ═══════════════════ -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Beauty Shop</div>
+        <h2 class="section-title">Premium <em>Beauty Products</em></h2>
+        <p class="section-subtitle">Curated luxury beauty essentials, recommended by our AI stylist based on your unique beauty profile.</p>
+      </div>
+      <div class="products-grid" id="products-grid">
+        <!-- JS populated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ DASHBOARD ═══════════════════ -->
+  <section class="dashboard-section" id="dashboard">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Analytics</div>
+        <h2 class="section-title">Salon <em>Intelligence</em> Dashboard</h2>
+        <p class="section-subtitle">Real-time revenue, booking, and performance metrics at a glance.</p>
+      </div>
+      <div class="dashboard-grid">
+        <!-- Revenue Card -->
+        <div class="dash-card dash-revenue">
+          <div class="dash-card-header">
+            <h3>Revenue Overview</h3>
+            <div class="dash-period-btns">
+              <button class="period-btn active" id="period-week" onclick="switchPeriod('week')">Week</button>
+              <button class="period-btn" id="period-month" onclick="switchPeriod('month')">Month</button>
+              <button class="period-btn" id="period-year" onclick="switchPeriod('year')">Year</button>
+            </div>
+          </div>
+          <div class="dash-revenue-main">
+            <div class="revenue-big">
+              <span class="rev-amount" id="rev-amount">$48,290</span>
+              <span class="rev-change positive" id="rev-change">↑ 12.4%</span>
+            </div>
+            <div class="rev-subtitle" id="rev-subtitle">This week vs last week</div>
+          </div>
+          <div class="chart-container" id="revenue-chart">
+            <canvas id="revenueCanvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Booking Stats -->
+        <div class="dash-card dash-bookings">
+          <div class="dash-card-header">
+            <h3>Booking Stats</h3>
+            <span class="dash-badge">Today</span>
+          </div>
+          <div class="booking-stats-grid" id="booking-stats-grid">
+            <!-- JS populated -->
+          </div>
+          <div class="booking-donut-wrap">
+            <canvas id="bookingDonut" width="160" height="160"></canvas>
+            <div class="donut-legend" id="donut-legend"></div>
+          </div>
+        </div>
+
+        <!-- Top Services -->
+        <div class="dash-card dash-top-services">
+          <div class="dash-card-header">
+            <h3>Top Services</h3>
+            <span class="dash-badge rose">This Month</span>
+          </div>
+          <div class="top-services-list" id="top-services-list">
+            <!-- JS populated -->
+          </div>
+        </div>
+
+        <!-- Staff Performance -->
+        <div class="dash-card dash-staff">
+          <div class="dash-card-header">
+            <h3>Staff Performance</h3>
+            <button class="dash-link" id="view-all-staff">View All</button>
+          </div>
+          <div class="staff-perf-list" id="staff-perf-list">
+            <!-- JS populated -->
+          </div>
+        </div>
+
+        <!-- Product Sales -->
+        <div class="dash-card dash-products">
+          <div class="dash-card-header">
+            <h3>Product Sales</h3>
+            <span class="dash-badge gold">Top Sellers</span>
+          </div>
+          <div class="product-sales-list" id="product-sales-list">
+            <!-- JS populated -->
+          </div>
+        </div>
+
+        <!-- Reminders -->
+        <div class="dash-card dash-reminders">
+          <div class="dash-card-header">
+            <h3>Automated Reminders</h3>
+            <span class="dash-badge green">Active</span>
+          </div>
+          <div class="reminders-list" id="reminders-list">
+            <!-- JS populated -->
+          </div>
+          <div class="reminders-footer">
+            <div class="reminder-stat">
+              <span class="rs-val">94%</span>
+              <span class="rs-label">Open Rate</span>
+            </div>
+            <div class="reminder-stat">
+              <span class="rs-val">78%</span>
+              <span class="rs-label">Confirmation Rate</span>
+            </div>
+            <div class="reminder-stat">
+              <span class="rs-val">12%</span>
+              <span class="rs-label">No-show Reduction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ BEAUTY PROFILE ═══════════════════ -->
+  <section class="profile-section" id="profile">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Your Profile</div>
+        <h2 class="section-title">Personalized <em>Beauty Profile</em></h2>
+        <p class="section-subtitle">Your unique beauty identity, tracked and evolved with every visit.</p>
+      </div>
+      <div class="profile-showcase">
+        <div class="profile-card">
+          <div class="profile-avatar">
+            <div class="avatar-circle">SA</div>
+            <div class="avatar-badge">✦ VIP</div>
+          </div>
+          <h3 class="profile-name">Sarah Anderson</h3>
+          <div class="profile-tier">Diamond Member · 8,420 pts</div>
+          <div class="profile-attributes">
+            <div class="attr-row">
+              <span class="attr-label">Face Shape</span>
+              <span class="attr-val">Oval</span>
+            </div>
+            <div class="attr-row">
+              <span class="attr-label">Skin Tone</span>
+              <span class="attr-val">Warm Medium</span>
+            </div>
+            <div class="attr-row">
+              <span class="attr-label">Hair Type</span>
+              <span class="attr-val">2B Wavy</span>
+            </div>
+            <div class="attr-row">
+              <span class="attr-label">Style Vibe</span>
+              <span class="attr-val">Boho Luxe</span>
+            </div>
+            <div class="attr-row">
+              <span class="attr-label">Last Visit</span>
+              <span class="attr-val">May 18, 2026</span>
+            </div>
+            <div class="attr-row">
+              <span class="attr-label">Total Visits</span>
+              <span class="attr-val">47 visits</span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-suggestions">
+          <h3 class="ps-title">AI Beauty Suggestions</h3>
+          <div class="suggestion-cards" id="suggestion-cards">
+            <!-- JS populated -->
+          </div>
+        </div>
+        <div class="profile-history">
+          <h3 class="ph-title">Visit History</h3>
+          <div class="history-timeline" id="history-timeline">
+            <!-- JS populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">✦ GlowStudio</div>
+            <p class="footer-tagline">Where Beauty Meets Intelligence.</p>
+            <p class="footer-desc">The premier AI-powered luxury salon and beauty studio, redefining the beauty experience through technology and artistry.</p>
+            <div class="footer-socials">
+              <a href="#" class="social-link" id="social-instagram" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="social-link" id="social-tiktok" aria-label="TikTok">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              </a>
+              <a href="#" class="social-link" id="social-fb" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#" id="fl-hair">Hair Styling</a></li>
+              <li><a href="#" id="fl-color">Hair Coloring</a></li>
+              <li><a href="#" id="fl-makeup">Makeup & Beauty</a></li>
+              <li><a href="#" id="fl-skincare">Skincare</a></li>
+              <li><a href="#" id="fl-nail">Nail Art</a></li>
+              <li><a href="#" id="fl-spa">Spa Treatments</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Studio</h4>
+            <ul>
+              <li><a href="#" id="fl-about">About Us</a></li>
+              <li><a href="#" id="fl-team">Our Team</a></li>
+              <li><a href="#" id="fl-gallery">Gallery</a></li>
+              <li><a href="#" id="fl-careers">Careers</a></li>
+              <li><a href="#" id="fl-blog">Beauty Blog</a></li>
+              <li><a href="#" id="fl-press">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="contact-info">
+              <div class="contact-item">📍 123 Luxury Lane, Beverly Hills, CA</div>
+              <div class="contact-item">📞 +1 (310) 555-GLOW</div>
+              <div class="contact-item">✉️ hello@glowstudio.com</div>
+              <div class="contact-item">⏰ Mon–Sat: 9AM–8PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-inner">
+          <span>© 2026 GlowStudio. All rights reserved.</span>
+          <div class="footer-links">
+            <a href="#" id="fl-privacy">Privacy</a>
+            <a href="#" id="fl-terms">Terms</a>
+            <a href="#" id="fl-cookies">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════ BOOKING MODAL ═══════════════════ -->
+  <div class="modal-overlay" id="booking-modal" onclick="closeModalOutside(event,'booking-modal')">
+    <div class="modal-box booking-modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" id="booking-modal-close" onclick="closeModal('booking-modal')" aria-label="Close">×</button>
+      <div class="modal-header">
+        <h2>Book Your <em>Experience</em></h2>
+        <p>Reserve your luxury beauty session</p>
+      </div>
+      <div class="booking-steps">
+        <div class="step-indicator" id="step-indicator">
+          <div class="step-dot active" id="step-dot-1" data-step="1">1</div>
+          <div class="step-line" id="step-line-1"></div>
+          <div class="step-dot" id="step-dot-2" data-step="2">2</div>
+          <div class="step-line" id="step-line-2"></div>
+          <div class="step-dot" id="step-dot-3" data-step="3">3</div>
+          <div class="step-line" id="step-line-3"></div>
+          <div class="step-dot" id="step-dot-4" data-step="4">4</div>
+        </div>
+        <div class="step-labels">
+          <span>Service</span><span>Stylist</span><span>Date & Time</span><span>Confirm</span>
+        </div>
+      </div>
+
+      <!-- Step 1: Service -->
+      <div class="booking-step" id="booking-step-1">
+        <h3>Choose Your Service</h3>
+        <div class="service-selector" id="service-selector">
+          <!-- JS populated -->
+        </div>
+        <button class="btn-rose-full" id="step1-next" onclick="bookingNext(2)">Continue →</button>
+      </div>
+
+      <!-- Step 2: Stylist -->
+      <div class="booking-step hidden" id="booking-step-2">
+        <h3>Select a Stylist</h3>
+        <div class="stylist-selector" id="stylist-selector">
+          <!-- JS populated -->
+        </div>
+        <div class="step-nav">
+          <button class="btn-outline-sm" id="step2-back" onclick="bookingBack(1)">← Back</button>
+          <button class="btn-rose" id="step2-next" onclick="bookingNext(3)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Date & Time -->
+      <div class="booking-step hidden" id="booking-step-3">
+        <h3>Pick Date & Time</h3>
+        <div class="datetime-picker">
+          <div class="date-picker" id="date-picker">
+            <div class="calendar-header">
+              <button class="cal-nav" id="cal-prev" onclick="calNav(-1)">‹</button>
+              <span class="cal-month" id="cal-month-label">June 2026</span>
+              <button class="cal-nav" id="cal-next" onclick="calNav(1)">›</button>
+            </div>
+            <div class="calendar-grid" id="calendar-grid">
+              <!-- JS populated -->
+            </div>
+          </div>
+          <div class="time-slots" id="time-slots-wrap">
+            <h4>Available Times</h4>
+            <div class="slots-grid" id="slots-grid">
+              <!-- JS populated -->
+            </div>
+          </div>
+        </div>
+        <div class="step-nav">
+          <button class="btn-outline-sm" id="step3-back" onclick="bookingBack(2)">← Back</button>
+          <button class="btn-rose" id="step3-next" onclick="bookingNext(4)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Confirm -->
+      <div class="booking-step hidden" id="booking-step-4">
+        <h3>Confirm Booking</h3>
+        <div class="booking-summary" id="booking-summary">
+          <!-- JS populated -->
+        </div>
+        <div class="client-form">
+          <div class="form-group">
+            <label for="client-name">Full Name</label>
+            <input type="text" id="client-name" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="client-phone">Phone Number</label>
+            <input type="tel" id="client-phone" placeholder="+1 (555) 000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="client-notes">Special Notes</label>
+            <textarea id="client-notes" placeholder="Any preferences or special requests..." rows="2"></textarea>
+          </div>
+        </div>
+        <div class="step-nav">
+          <button class="btn-outline-sm" id="step4-back" onclick="bookingBack(3)">← Back</button>
+          <button class="btn-rose" id="confirm-booking-btn" onclick="confirmBooking()">Confirm Booking ✦</button>
+        </div>
+      </div>
+
+      <!-- Confirmation -->
+      <div class="booking-step hidden" id="booking-confirmed">
+        <div class="confirmation-anim">
+          <div class="conf-circle">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#B76E79" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Booking Confirmed!</h3>
+          <p>Your appointment has been booked. A confirmation SMS and email will be sent shortly.</p>
+          <div class="conf-ref" id="conf-ref">Ref: #GS-<span id="conf-ref-num">0000</span></div>
+          <button class="btn-rose" id="booking-done-btn" onclick="closeModal('booking-modal')">Done ✦</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ AI STYLIST MODAL ═══════════════════ -->
+  <div class="modal-overlay" id="ai-modal" onclick="closeModalOutside(event,'ai-modal')">
+    <div class="modal-box ai-modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" id="ai-modal-close" onclick="closeModal('ai-modal')" aria-label="Close">×</button>
+      <div class="ai-modal-header">
+        <div class="ai-modal-icon">✦</div>
+        <h2>GlowAI™ Stylist</h2>
+        <p>Your personalized AI beauty advisor</p>
+      </div>
+      <div class="ai-questionnaire" id="ai-questionnaire">
+        <div class="ai-q" id="ai-q-face">
+          <label>What is your face shape?</label>
+          <div class="ai-options" id="ai-face-options">
+            <button class="ai-opt" id="ai-opt-oval" onclick="selectAI('face','Oval',this)">🥚 Oval</button>
+            <button class="ai-opt" id="ai-opt-round" onclick="selectAI('face','Round',this)">⭕ Round</button>
+            <button class="ai-opt" id="ai-opt-square" onclick="selectAI('face','Square',this)">⬜ Square</button>
+            <button class="ai-opt" id="ai-opt-heart" onclick="selectAI('face','Heart',this)">❤️ Heart</button>
+            <button class="ai-opt" id="ai-opt-diamond" onclick="selectAI('face','Diamond',this)">💎 Diamond</button>
+          </div>
+        </div>
+        <div class="ai-q" id="ai-q-hair">
+          <label>Current hair type?</label>
+          <div class="ai-options" id="ai-hair-options">
+            <button class="ai-opt" id="ai-opt-straight" onclick="selectAI('hair','Straight',this)">➖ Straight</button>
+            <button class="ai-opt" id="ai-opt-wavy" onclick="selectAI('hair','Wavy',this)">〰️ Wavy</button>
+            <button class="ai-opt" id="ai-opt-curly" onclick="selectAI('hair','Curly',this)">🌀 Curly</button>
+            <button class="ai-opt" id="ai-opt-coily" onclick="selectAI('hair','Coily',this)">🔁 Coily</button>
+          </div>
+        </div>
+        <div class="ai-q" id="ai-q-style">
+          <label>Your style vibe?</label>
+          <div class="ai-options" id="ai-style-options">
+            <button class="ai-opt" id="ai-opt-classic" onclick="selectAI('style','Classic',this)">🎩 Classic</button>
+            <button class="ai-opt" id="ai-opt-boho" onclick="selectAI('style','Boho',this)">🌸 Boho</button>
+            <button class="ai-opt" id="ai-opt-edgy" onclick="selectAI('style','Edgy',this)">⚡ Edgy</button>
+            <button class="ai-opt" id="ai-opt-romantic" onclick="selectAI('style','Romantic',this)">🌹 Romantic</button>
+          </div>
+        </div>
+        <button class="btn-rose-full" id="ai-generate-btn" onclick="generateAIRecommendations()">
+          <span>✦ Generate My Beauty Profile</span>
+        </button>
+      </div>
+      <div class="ai-results hidden" id="ai-results">
+        <div class="ai-loading" id="ai-loading">
+          <div class="ai-spinner"></div>
+          <p>GlowAI™ is analyzing your beauty profile...</p>
+        </div>
+        <div class="ai-rec-cards hidden" id="ai-rec-cards">
+          <!-- JS populated -->
+        </div>
+        <button class="btn-outline-full" id="ai-redo-btn" onclick="resetAI()">← Try Again</button>
+        <button class="btn-rose-full" id="ai-book-btn" onclick="closeModal('ai-modal');openModal('booking-modal')">Book Recommended Service →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ LOGIN MODAL ═══════════════════ -->
+  <div class="modal-overlay" id="login-modal" onclick="closeModalOutside(event,'login-modal')">
+    <div class="modal-box login-modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" id="login-modal-close" onclick="closeModal('login-modal')" aria-label="Close">×</button>
+      <div class="login-tabs">
+        <button class="login-tab active" id="tab-signin" onclick="switchLoginTab('signin')">Sign In</button>
+        <button class="login-tab" id="tab-signup" onclick="switchLoginTab('signup')">Sign Up</button>
+      </div>
+      <div class="login-form" id="signin-form">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="••••••••" />
+        </div>
+        <button class="btn-rose-full" id="signin-btn" onclick="handleLogin()">Sign In ✦</button>
+        <p class="form-hint">Don't have an account? <a href="#" onclick="switchLoginTab('signup')">Sign up</a></p>
+      </div>
+      <div class="login-form hidden" id="signup-form">
+        <div class="form-group">
+          <label for="signup-name">Full Name</label>
+          <input type="text" id="signup-name" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="signup-phone">Phone</label>
+          <input type="tel" id="signup-phone" placeholder="+1 (555) 000-0000" />
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" placeholder="Create a strong password" />
+        </div>
+        <button class="btn-rose-full" id="signup-btn" onclick="handleSignup()">Create Account ✦</button>
+        <p class="form-hint">Already a member? <a href="#" onclick="switchLoginTab('signin')">Sign in</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Floating Book Button -->
+  <button class="floating-book-btn" id="floating-book-btn" onclick="openModal('booking-modal')" aria-label="Quick Book">
+    <span>✦</span>
+  </button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

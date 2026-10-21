@@ -1,0 +1,93 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  transition: box-shadow var(--transition), background var(--transition);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background var(--transition);
+  border-radius: inherit;
+}
+
+.btn:hover::after { background: rgba(255,255,255,0.07); }
+
+/* ── Variants ── */
+.rose {
+  background: linear-gradient(135deg, var(--rose-500) 0%, var(--rose-700) 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(183,110,121,0.35);
+}
+.rose:hover { box-shadow: 0 8px 32px rgba(183,110,121,0.48); }
+
+.roseOutline {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  color: var(--rose-700);
+  border: 1.5px solid var(--rose-300);
+  box-shadow: none;
+}
+.roseOutline:hover { background: var(--rose-50); border-color: var(--rose-500); }
+
+.ghost {
+  background: transparent;
+  color: var(--warm-700);
+  border: 1.5px solid var(--warm-300);
+}
+.ghost:hover { border-color: var(--rose-300); color: var(--rose-600); background: var(--rose-50); }
+
+.dark {
+  background: var(--warm-900);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.dark:hover { background: var(--warm-800); }
+
+.gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.35);
+}
+.gold:hover { box-shadow: 0 8px 30px rgba(201,168,76,0.45); }
+
+/* ── Sizes ── */
+.sm  { font-size: 12px; padding: 8px 18px; }
+.md  { font-size: 14px; padding: 11px 24px; }
+.lg  { font-size: 15px; padding: 14px 32px; }
+.xl  { font-size: 16px; padding: 17px 40px; }
+
+/* ── States ── */
+.fullWidth { width: 100%; border-radius: var(--r-md); }
+.disabled  { opacity: 0.5; pointer-events: none; }
+.loading   { pointer-events: none; }
+
+/* ── Spinner ── */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spinLoader 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.iconLeft, .iconRight {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
